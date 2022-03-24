@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CalculateSquare
+﻿namespace CalculateSquare
 {
     public class Circle : Figure
     {
+        double radius;
+        double Radius
+        {
+            get { return radius; }
+            set { radius = Math.Abs(value); }
+        }
+        public Circle(double radius)
+        {
+            Radius = radius;
+        }
         public override double Square()
         {
-            throw new NotImplementedException();
+            return radius == 0 ? 0 : Math.Pow(Radius, 2) * Math.PI;
         }
     }
 }
